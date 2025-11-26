@@ -1,0 +1,45 @@
+<section class="min-vh-100 d-flex align-items-center justify-content-center px-3 px-sm-4">
+  <div class="w-100" style="max-width: 500px">
+    <div class="shadow-lg rounded-3 p-4 p-md-5 gradient">
+      <h2 class="text-center text-primary fs-3 fw-bold mb-4">Create Account</h2>
+
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="space-y-3">
+        <!-- Name -->
+        <app-input-field label="Name" name="name" [form]="signupForm"> </app-input-field>
+        <!-- Email -->
+        <app-input-field label="Email" name="email" type="email" [form]="signupForm">
+        </app-input-field>
+        <!-- Password -->
+        <app-input-field label="Password" name="password" type="password" [form]="signupForm">
+        </app-input-field>
+        <!-- Confirm Password -->
+        <app-input-field
+          label="Confirm Password"
+          name="rePassword"
+          type="password"
+          [form]="signupForm"
+        >
+        </app-input-field>
+        <!-- Phone -->
+        <app-input-field label="Phone" name="phone" [form]="signupForm"> </app-input-field>
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          [disabled]="loading || signupForm.invalid"
+          class="w-100 btn btn-primary d-flex align-items-center justify-content-center gap-2 py-2 mt-4 rounded-3 fw-semibold"
+          [class.animate-pulse]="loading"
+        >
+          @if (loading) {
+          <span class="spinner-border spinner-border-sm" role="status"></span>
+          } Sign Up
+        </button>
+        <!-- Error Message -->
+        @if (errorMessage) {
+        <div class="alert alert-danger mt-3 text-center small">
+          {{ errorMessage }}
+        </div>
+        }
+      </form>
+    </div>
+  </div>
+</section>

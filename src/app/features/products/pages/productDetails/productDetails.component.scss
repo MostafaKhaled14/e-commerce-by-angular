@@ -1,0 +1,22 @@
+.product-details {
+  .product-image {
+    max-height: 400px;
+    object-fit: contain;
+  }
+
+  .rating {
+    font-size: 14px;
+    color: #ffb400;
+  }
+
+  .price {
+    color: #198754;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .action-buttons .btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+  }
+}

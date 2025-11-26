@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-dark gradient shadow-sm border-bottom border-primary">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" routerLink="/">
+      <i class="bi bi-shop"></i> ShopZone
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        @for (item of navLinks; track item.id) {
+        <li class="nav-item">
+          <a
+            class="nav-link text-dark"
+            [routerLink]="item.href"
+            routerLinkActive="my-active-class"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >{{ item.label }}</a
+          >
+        </li>
+        }
+      </ul>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link position-relative text-dark" routerLink="/cart">
+            <i class="bi bi-cart"></i>
+            @if (itemCount > 0) {
+            <span
+              class="badge bg-primary rounded-pill position-absolute start-50 opacity-50 translate-middle"
+            >
+              {{ itemCount }}
+            </span>
+
+            }
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-dark"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            <i class="bi bi-person-circle"></i>
+          </a>
+          <ul class="custom-menu-class dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" routerLink="/profile">My Account</a></li>
+            <li><a class="dropdown-item" routerLink="/orders">My Orders</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li class="custom-cursor-class dropdown-item text-danger" (click)="onLogout()">
+              Logout
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

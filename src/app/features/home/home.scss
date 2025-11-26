@@ -1,0 +1,65 @@
+// src/app/features/home/home.component.scss
+
+main {
+  min-height: 70vh;
+}
+
+.hero-section {
+  .btn {
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: #f3f4f6;
+    }
+  }
+}
+
+
+
+// .home-container {
+//   background-color: #f8f9fa;
+
+//   .hero-section {
+//     background: linear-gradient(135deg, #0d6efd, #6610f2);
+//     border-radius: 1rem;
+//     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+//     .text-warning {
+//       color: #ffc107 !important;
+//     }
+
+//     .btn {
+//       transition: all 0.3s ease;
+//       &:hover {
+//         transform: translateY(-2px);
+//         background-color: #ffc107;
+//         color: #000;
+//       }
+//     }
+//   }
+
+//   .cta-section {
+//     background: linear-gradient(135deg, #212529, #343a40);
+//   }
+
+//   /* Simple animations */
+//   .animate-fade-up {
+//     opacity: 0;
+//     transform: translateY(20px);
+//     animation: fadeUp 0.8s forwards;
+//   }
+
+//   .delay-1 {
+//     animation-delay: 0.2s;
+//   }
+
+//   .delay-2 {
+//     animation-delay: 0.4s;
+//   }
+
+//   @keyframes fadeUp {
+//     to {
+//       opacity: 1;
+//       transform: translateY(0);
+//     }
+//   }
+// }

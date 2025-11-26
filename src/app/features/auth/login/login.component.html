@@ -1,0 +1,51 @@
+<section class="min-vh-100 d-flex align-items-center justify-content-center px-3 px-sm-4">
+  <div class="w-100" style="max-width: 500px">
+    <div class="bg-white shadow-lg rounded-3 p-4 p-md-5 gradient">
+      <h2 class="text-center text-primary fs-3 fw-bold mb-4">Login</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-3">
+        <!-- Email -->
+        <app-input-field label="Email" name="email" type="email" [form]="loginForm">
+        </app-input-field>
+
+        <!-- Password -->
+        <app-input-field label="Password" name="password" type="password" [form]="loginForm">
+        </app-input-field>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          [disabled]="loading || loginForm.invalid"
+          class="w-100 btn btn-primary d-flex align-items-center justify-content-center gap-2 py-2 mt-4 rounded-3 fw-semibold"
+          [class.animate-pulse]="loading"
+        >
+          @if (loading){
+          <span class="spinner-border spinner-border-sm" role="status"></span>
+
+          } Login
+        </button>
+
+        <!-- Links -->
+        <div class="text-center small text-secondary mt-3">
+          <p>
+            Don't have an account?
+            <a routerLink="/signup" class="text-primary fw-medium text-decoration-none">Sign Up</a>
+          </p>
+          <p class="mt-2">
+            Forgot your password?
+            <a routerLink="/forgot-password" class="text-primary fw-medium text-decoration-none"
+              >Reset</a
+            >
+          </p>
+        </div>
+
+        <!-- Error Message -->
+        @if (errorMessage) {
+        <div class="alert alert-danger mt-3 text-center small">
+          {{ errorMessage }}
+        </div>
+        }
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.btn-outline-primary {
+  border-radius: 8px;
+}
+
+.text-muted {
+  line-clamp: 2;
+  box-orient: vertical;
+  overflow: hidden;
+}

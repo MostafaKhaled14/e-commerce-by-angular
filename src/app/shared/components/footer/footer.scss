@@ -1,0 +1,23 @@
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.hover-text-info:hover { color: #0dcaf0 !important; }
+.hover-text-primary:hover { color: #0d6efd !important; }
+.hover-text-pink:hover { color: #d63384 !important; }
+.hover-text-success:hover { color: #198754 !important; }
+
+.transition-colors {
+  transition: color 0.2s ease;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (max-width: 768px) {
+  .row > * {
+    margin-bottom: 2rem;
+  }
+}

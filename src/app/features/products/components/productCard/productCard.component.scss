@@ -1,0 +1,44 @@
+.hover-scale {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: translatey(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .btn-primary {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+  }
+
+  button {
+    .bi-heart-fill {
+      color: #dc3545 !important;
+    }
+
+    .bi-heart {
+      color: #2563eb !important;
+    }
+
+    .wishlist-icon:hover {
+      box-shadow: 0 4px 18px rgba(185, 208, 238, 0.4);
+    }
+  }
+}

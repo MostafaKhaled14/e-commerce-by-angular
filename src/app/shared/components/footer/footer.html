@@ -1,0 +1,61 @@
+<footer class="gradient text-white py-5 px-3 border-top border-primary">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Logo + Description -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <a
+          routerLink="/"
+          class="d-inline-block text-2xl fw-bold mb-2 text-primary text-decoration-none"
+        >
+          ShopZone
+        </a>
+        <p class="small text-dark">
+          Your one-stop online shop for the latest and greatest products.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h3 class="fw-semibold mb-3 text-primary">Quick Links</h3>
+        <ul class="list-unstyled small space-y-2">
+          @for (link of quickLinks; track link.id) {
+          <li>
+            <a
+              routerLink="{{ link.href }}"
+              class="text-dark text-decoration-none hover-text-primary transition-colors"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h3 class="fw-semibold mb-3 text-primary">Contact Us</h3>
+        <ul class="list-unstyled small space-y-2 text-dark">
+          <li>Email: support@ShopZone.com</li>
+          <li>Phone: +123 456 789</li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h3 class="fw-semibold mb-3 text-primary">Follow Us</h3>
+        <div class="d-flex gap-3">
+          @for (fLink of followUsLinks; track fLink.id) {
+          <a href="{{ fLink.href }}" [ngClass]="['text-dark transition-colors', fLink.colorsClass]">
+            <i class="{{ fLink.iconName }}"></i>
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center small text-primary mt-5 pt-4 border-top border-dark">
+      &copy; {{ currentYear }} ShopZone. All rights reserved.
+    </div>
+  </div>
+</footer>

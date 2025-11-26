@@ -1,0 +1,20 @@
+<div class="mb-3">
+  <label [for]="name" class="form-label fw-medium text-secondary">{{ label }}:</label>
+
+  <input
+    [type]="type"
+    [id]="name"
+    [name]="name"
+    class="form-control"
+    [class.is-invalid]="control.invalid && control.touched"
+    [formControl]="control"
+    [placeholder]="'Enter ' + name"
+    (blur)="control.markAsTouched()"
+  />
+
+  @if (errorMessage && control.touched) {
+  <div class="invalid-feedback">
+    {{ errorMessage }}
+  </div>
+  }
+</div>

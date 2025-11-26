@@ -1,0 +1,24 @@
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  border: none;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.alert {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
